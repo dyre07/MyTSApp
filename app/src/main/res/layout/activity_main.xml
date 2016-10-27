@@ -57,6 +57,7 @@
         android:layout_alignBottom="@+id/buttonMurid"
         android:layout_alignLeft="@+id/imageView"
         android:layout_alignStart="@+id/imageView"
+        android:elevation="0dp"
         android:text="Teacher" />
 
     <TextView
