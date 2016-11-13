@@ -2,13 +2,13 @@ package id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.net.Uri;
-import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -19,28 +19,25 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.OutputStreamWriter;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     public static final String LOGIN_URL = "http://192.168.1.12/android_login_api/login.php";
-
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
-
-    private EditText editTextUsername;
-    private EditText editTextPassword;
-    private Button buttonLogin;
+    private static final String TAG = "LoginActivity";
+    @Bind(R.id.email)
+    EditText _emailText;
+    @Bind(R.id.password)
+    EditText _passwordText;
+    @Bind(R.id.button)
+    Button _loginButton;
+    @Bind(R.id.link_signup)
+    TextView _signupLink;
 
     private String username;
     private String password;
@@ -49,26 +46,56 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        ButterKnife.bind(this);
 
-        editTextUsername = (EditText) findViewById(R.id.email);
-        editTextPassword = (EditText) findViewById(R.id.password);
+        _emailText = (EditText) findViewById(R.id.email);
+        _passwordText = (EditText) findViewById(R.id.password);
+        _loginButton = (Button) findViewById(R.id.button);
 
-        buttonLogin = (Button) findViewById(R.id.button);
+        _loginButton.setOnClickListener(new View.OnClickListener() {
 
-        buttonLogin.setOnClickListener(this);
+            @Override
+            public void onClick(View v) {
+                userLogin();
+            }
+        });
     }
 
 
     private void userLogin() {
-        username = editTextUsername.getText().toString().trim();
-        password = editTextPassword.getText().toString().trim();
+        Log.d(TAG, "Login");
+
+        if (!validate()) {
+            onLoginFailed();
+            return;
+        }
+
+        _loginButton.setEnabled(false);
+
+        final ProgressDialog progressDialog = new ProgressDialog(LoginActivity.this,
+                R.style.AppTheme_Dark_Dialog);
+        progressDialog.setIndeterminate(true);
+        progressDialog.setMessage("Authenticating...");
+        progressDialog.show();
+
+        new android.os.Handler().postDelayed(
+                new Runnable() {
+                    public void run() {
+                        // On complete call either onLoginSuccess or onLoginFailed
+                        onLoginSuccess();
+                        // onLoginFailed();
+                        progressDialog.dismiss();
+                    }
+                }, 3000);
+        username = _emailText.getText().toString().trim();
+        password = _passwordText.getText().toString().trim();
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, LOGIN_URL,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         if (response.trim().equals("success")) {
-                            openProfile();
+                            onLoginSuccess();
                         } else {
                             Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
                         }
@@ -92,14 +119,45 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
-    private void openProfile(){
+
+    private void onLoginFailed() {
+        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        _loginButton.setEnabled(true);
+    }
+
+    private void onLoginSuccess() {
         Intent intent = new Intent(this, MainMenuActivity.class);
         intent.putExtra(KEY_USERNAME, username);
         startActivity(intent);
+        overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
     }
+
 
     @Override
     public void onClick(View view) {
         userLogin();
+    }
+
+    public boolean validate() {
+        boolean valid = true;
+
+        String email = _emailText.getText().toString();
+        String password = _passwordText.getText().toString();
+
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            _emailText.setError("enter a valid email address");
+            valid = false;
+        } else {
+            _emailText.setError(null);
+        }
+
+        if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
+            _passwordText.setError("between 4 and 10 alphanumeric characters");
+            valid = false;
+        } else {
+            _passwordText.setError(null);
+        }
+
+        return valid;
     }
 }
