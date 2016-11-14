@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import static id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.R.id.textView;
-
 public class MainMenuActivity extends AppCompatActivity {
 
     private TextView textView;
@@ -15,6 +13,13 @@ public class MainMenuActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
+        findViewById(R.id.imageViewPengumuman).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenuActivity.this, AnnouncementActivity.class));
+            }
+        });
 
         findViewById(R.id.imageViewJadwal).setOnClickListener(new View.OnClickListener() {
             @Override

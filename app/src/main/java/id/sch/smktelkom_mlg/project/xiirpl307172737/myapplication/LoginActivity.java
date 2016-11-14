@@ -26,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String LOGIN_URL = "http://192.168.1.12/android_login_api/login.php";
+    public static final String LOGIN_URL = "http://172.26.2.134/android_login_api/login.php";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     private static final String TAG = "LoginActivity";
@@ -78,15 +78,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         progressDialog.setMessage("Authenticating...");
         progressDialog.show();
 
-        new android.os.Handler().postDelayed(
-                new Runnable() {
-                    public void run() {
-                        // On complete call either onLoginSuccess or onLoginFailed
-                        onLoginSuccess();
-                        // onLoginFailed();
-                        progressDialog.dismiss();
-                    }
-                }, 3000);
         username = _emailText.getText().toString().trim();
         password = _passwordText.getText().toString().trim();
 
@@ -95,9 +86,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
                         if (response.trim().equals("success")) {
+                            progressDialog.dismiss();
                             onLoginSuccess();
-                        } else {
-                            Toast.makeText(LoginActivity.this, response, Toast.LENGTH_LONG).show();
+                        } else if (response.trim().equals("failure")) {
+                            progressDialog.dismiss();
+                            onLoginFailed();
+
                         }
                     }
                 },
@@ -121,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void onLoginFailed() {
-        Toast.makeText(getBaseContext(), "Login failed", Toast.LENGTH_LONG).show();
+        Toast.makeText(getBaseContext(), "Login failed Wrong Username Or Password", Toast.LENGTH_LONG).show();
         _loginButton.setEnabled(true);
     }
 
@@ -160,4 +154,5 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         return valid;
     }
+
 }
