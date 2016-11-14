@@ -26,10 +26,11 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String LOGIN_URL = "http://172.26.2.134/android_login_api/login.php";
+    public static final String LOGIN_URL = "http://192.168.1.12/android_login_api/login.php";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     private static final String TAG = "LoginActivity";
+
     @Bind(R.id.email)
     EditText _emailText;
     @Bind(R.id.password)
@@ -98,6 +99,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+                        progressDialog.dismiss();
                         Toast.makeText(LoginActivity.this, error.toString(), Toast.LENGTH_LONG).show();
                     }
                 }) {
@@ -120,7 +122,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void onLoginSuccess() {
-        Intent intent = new Intent(this, MainMenuActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MainMenuActivity.class);
         intent.putExtra(KEY_USERNAME, username);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
