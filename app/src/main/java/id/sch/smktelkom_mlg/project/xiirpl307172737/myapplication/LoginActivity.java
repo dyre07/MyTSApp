@@ -26,7 +26,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String LOGIN_URL = "http://192.168.1.12/android_login_api/login.php";
+    public static final String LOGIN_URL = "http://192.168.43.212/android_login_api/login.php";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     private static final String TAG = "LoginActivity";

@@ -22,6 +22,13 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.imageViewPengumuman).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainMenuActivity.this, AnnounceActivity.class));
+            }
+        });
+
         textView = (TextView) findViewById(R.id.textViewUsername);
 
         Intent intent = getIntent();
