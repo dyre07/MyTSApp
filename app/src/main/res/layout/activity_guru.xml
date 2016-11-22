@@ -10,5 +10,11 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.Guru">
 
+    <TextView
+        android:text="Tidak hadir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textViewjudul"
+        android:layout_weight="1" />
 
 </RelativeLayout>
