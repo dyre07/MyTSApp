@@ -34,6 +34,7 @@
             android:name=".LoginActivity"
             android:theme="@style/AppTheme.Dark" />
         <activity android:name=".barangtertinggal" />
+        <activity android:name=".Guru"></activity>
     </application>
 
 </manifest>
