@@ -36,6 +36,9 @@
         <activity
             android:name=".AnnounceActivity"
             android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name=".GuruActivity"
+            android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>

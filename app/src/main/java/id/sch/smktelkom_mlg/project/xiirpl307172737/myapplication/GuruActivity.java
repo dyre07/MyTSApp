@@ -19,20 +19,20 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class AnnounceActivity extends AppCompatActivity {
+public class GuruActivity extends AppCompatActivity {
     String json_string;
     JSONObject jsonObject;
     JSONArray jsonArray;
-    ContactAdapter contactAdapter;
+    GuruAdapter guruAdapter;
     ListView listView;
     ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_announce);
+        setContentView(R.layout.activity_guru);
 
-        progressDialog = new ProgressDialog(AnnounceActivity.this,
+        progressDialog = new ProgressDialog(GuruActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setCancelable(false);
@@ -41,28 +41,28 @@ public class AnnounceActivity extends AppCompatActivity {
         getJSON();
     }
 
-    public void getJSON() {
-
+    private void getJSON() {
         new BackgroundTask().execute();
     }
 
     public void parseJSON() {
-        listView = (ListView) findViewById(R.id.listview);
-        contactAdapter = new ContactAdapter(this, R.layout.row_layout);
-        listView.setAdapter(contactAdapter);
+        listView = (ListView) findViewById(R.id.lv);
+        guruAdapter = new GuruAdapter(this, R.layout.row_layout_guru);
+        listView.setAdapter(guruAdapter);
 
         try {
             jsonObject = new JSONObject(json_string);
             jsonArray = jsonObject.getJSONArray("result");
             int count = 0;
-            String jam, untuk, pengumuman;
+            String teacher, pelajaran, kelas, tugas;
             while (count < jsonArray.length()) {
                 JSONObject JO = jsonArray.getJSONObject(count);
-                jam = JO.getString("jam");
-                untuk = JO.getString("untuk");
-                pengumuman = JO.getString("pengumuman");
-                Contacts contacts = new Contacts(jam, untuk, pengumuman);
-                contactAdapter.add(contacts);
+                teacher = JO.getString("guru");
+                pelajaran = JO.getString("pelajaran");
+                kelas = JO.getString("kelas");
+                tugas = JO.getString("tugas");
+                Guru guru = new Guru(teacher, pelajaran, kelas, tugas);
+                guruAdapter.add(guru);
                 count++;
 
             }
@@ -78,7 +78,7 @@ public class AnnounceActivity extends AppCompatActivity {
 
         @Override
         protected void onPreExecute() {
-            json_url = "http://172.26.6.1/android_login_api/announcement.php";
+            json_url = "http://172.26.6.1/android_login_api/guru.php";
         }
 
         @Override
