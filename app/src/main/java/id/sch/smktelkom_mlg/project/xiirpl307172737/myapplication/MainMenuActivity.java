@@ -30,6 +30,7 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
+
         textView = (TextView) findViewById(R.id.textViewUsername);
 
         Intent intent = getIntent();
