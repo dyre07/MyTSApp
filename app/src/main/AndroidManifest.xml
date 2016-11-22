@@ -32,9 +32,7 @@
             android:theme="@style/AppTheme.Dark" />
         <activity
             android:name=".LoginActivity"
-            android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".barangtertinggal" />
-        <activity android:name=".Guru"></activity>
+            android:theme="@style/AppTheme.Dark"></activity>
     </application>
 
 </manifest>

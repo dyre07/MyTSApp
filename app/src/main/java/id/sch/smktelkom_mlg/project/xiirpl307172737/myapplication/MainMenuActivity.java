@@ -6,8 +6,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
-import static id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.R.id.textView;
-
 public class MainMenuActivity extends AppCompatActivity {
 
     private TextView textView;
