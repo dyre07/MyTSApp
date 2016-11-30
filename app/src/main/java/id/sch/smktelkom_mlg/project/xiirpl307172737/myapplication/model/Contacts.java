@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication;
+package id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.model;
 
 /**
  * Created by Dyre on 11/21/2016.

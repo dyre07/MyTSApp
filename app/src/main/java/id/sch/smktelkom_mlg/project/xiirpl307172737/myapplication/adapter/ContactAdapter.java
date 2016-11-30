@@ -1,4 +1,4 @@
-package id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication;
+package id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,6 +9,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.R;
+import id.sch.smktelkom_mlg.project.xiirpl307172737.myapplication.model.Contacts;
 
 /**
  * Created by Dyre on 11/21/2016.

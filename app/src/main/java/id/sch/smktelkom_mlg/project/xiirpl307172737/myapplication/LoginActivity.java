@@ -8,7 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,7 +25,7 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
-    public static final String LOGIN_URL = "http://192.168.43.212/android_login_api/login.php";
+    public static final String LOGIN_URL = "http://mytsapp.16mb.com/android/login.php";
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     private static final String TAG = "LoginActivity";
@@ -37,8 +36,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     EditText _passwordText;
     @Bind(R.id.button)
     Button _loginButton;
-    @Bind(R.id.link_signup)
-    TextView _signupLink;
 
     private String username;
     private String password;
@@ -122,7 +119,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void onLoginSuccess() {
-        Intent intent = new Intent(LoginActivity.this, MainMenuActivity.class);
+        Intent intent = new Intent(LoginActivity.this, MenuGuruActivity.class);
         intent.putExtra(KEY_USERNAME, username);
         startActivity(intent);
         overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);

@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(MainActivity.this, MainMenuActivity.class));
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
         });
 

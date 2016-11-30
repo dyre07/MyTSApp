@@ -35,6 +35,5 @@ dependencies {
     compile 'com.android.support:percent:24.2.1'
     compile 'com.mcxiaoke.volley:library-aar:1.0.0'
     compile 'com.jakewharton:butterknife:7.0.1'
-    compile 'com.firebase:firebase-client-android:2.4.0'
     testCompile 'junit:junit:4.12'
 }
