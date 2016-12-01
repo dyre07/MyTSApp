@@ -48,7 +48,6 @@
         <activity
             android:name=".InputAnnouncementActivity"
             android:theme="@style/AppTheme.Dark" />
-        <activity android:name=".BarangActivity" android:theme="@style/AppTheme.Dark"/>
     </application>
 
 </manifest>
