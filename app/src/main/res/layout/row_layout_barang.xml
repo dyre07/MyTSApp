@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tx_tanggal"
+        android:layout_width="85dp"
+        android:layout_height="25dp"
+        android:gravity="top"
+        android:text="Fani" />
+
+    <TextView
+        android:id="@+id/tx_kelas"
+        android:layout_width="120dp"
+        android:layout_height="25dp"
+        android:gravity="top"
+        android:text="Ningrum"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/tx_tanggal"
+        android:layout_toEndOf="@+id/tx_tanggal"
+        android:layout_marginLeft="36dp"
+        android:layout_marginStart="36dp" />
+
+    <TextView
+        android:id="@+id/tx_namabarang"
+        android:layout_height="70dp"
+        android:gravity="top"
+        android:text="TextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@+id/tx_kelas"
+        android:layout_width="wrap_content" />
+
+</RelativeLayout>
