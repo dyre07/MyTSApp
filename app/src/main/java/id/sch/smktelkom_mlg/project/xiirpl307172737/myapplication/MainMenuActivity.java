@@ -34,14 +34,6 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        findViewById(R.id.imageViewGuru).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(MainMenuActivity.this, Guru.class));
-            }
-        });
-
-        textView = (TextView) findViewById(R.id.textViewUsername);
 
         findViewById(R.id.imageViewGuru).setOnClickListener(new View.OnClickListener() {
             @Override

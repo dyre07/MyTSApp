@@ -24,22 +24,24 @@ import java.util.Map;
 import javax.net.ssl.HttpsURLConnection;
 
 import butterknife.Bind;
-import butterknife.ButterKnife;
 
-public class InputAnnouncementActivity extends AppCompatActivity {
+public class InputTugasActivity extends AppCompatActivity {
     public static final String KEY_TANGGAL = "tanggal";
-    public static final String KEY_JAM = "jam";
-    public static final String KEY_UNTUK = "untuk";
-    public static final String KEY_PENGUMUMAN = "pengumuman";
-    private static final String Input_URL = "http://mytsapp.16mb.com/android/insert_announcement.php";
+    public static final String KEY_GURU = "guru";
+    public static final String KEY_PELAJARAN = "pelajaran";
+    public static final String KEY_KELAS = "kelas";
+    public static final String KEY_TUGAS = "tugas";
+    private static final String Input_URL = "http://mytsapp.16mb.com/android/assignment.php";
     @Bind(R.id.et_tanggal)
     EditText etTanggal;
-    @Bind(R.id.et_jam)
-    EditText etJam;
-    @Bind(R.id.et_untuk)
-    EditText etUntuk;
-    @Bind(R.id.et_pengumuman)
-    EditText etPengumuman;
+    @Bind(R.id.et_guru)
+    EditText etGuru;
+    @Bind(R.id.et_pelajaran)
+    EditText etPelajaran;
+    @Bind(R.id.et_kelas)
+    EditText etKelas;
+    @Bind(R.id.et_tugas)
+    EditText etTugas;
     @Bind(R.id.buttonOk)
     Button bOk;
     @Bind(R.id.buttonCancel)
@@ -48,44 +50,44 @@ public class InputAnnouncementActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_input_announcement);
-        ButterKnife.bind(this);
+        setContentView(R.layout.activity_input_tugas);
 
         etTanggal = (EditText) findViewById(R.id.et_tanggal);
-        etJam = (EditText) findViewById(R.id.et_jam);
-        etUntuk = (EditText) findViewById(R.id.et_untuk);
-        etPengumuman = (EditText) findViewById(R.id.et_pengumuman);
+        etGuru = (EditText) findViewById(R.id.et_guru);
+        etPelajaran = (EditText) findViewById(R.id.et_pelajaran);
+        etKelas = (EditText) findViewById(R.id.et_kelas);
+        etTugas = (EditText) findViewById(R.id.et_tugas);
         bOk = (Button) findViewById(R.id.buttonOk);
         bCancel = (Button) findViewById(R.id.buttonCancel);
 
         bCancel.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                InputAnnouncementActivity.this.finish();
+            public void onClick(View v) {
+                InputTugasActivity.this.finish();
             }
         });
 
         bOk.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                inputAnnounce();
+            public void onClick(View v) {
+                InputTugas();
             }
         });
     }
 
-    private void inputAnnounce() {
-        final ProgressDialog progressDialog = new ProgressDialog(InputAnnouncementActivity.this,
+    private void InputTugas() {
+        final ProgressDialog progressDialog = new ProgressDialog(InputTugasActivity.this,
                 R.style.AppTheme_Dark_Dialog);
         progressDialog.setIndeterminate(true);
         progressDialog.setMessage("Please Wait...");
 
         final String tanggal = etTanggal.getText().toString().trim();
-        final String jam = etJam.getText().toString().trim();
-        final String untuk = etUntuk.getText().toString().trim();
-        final String pengumuman = etPengumuman.getText().toString().trim();
+        final String guru = etGuru.getText().toString().trim();
+        final String pelajaran = etPelajaran.getText().toString().trim();
+        final String kelas = etKelas.getText().toString().trim();
+        final String tugas = etTugas.getText().toString().trim();
 
-        class InputAnnounce extends AsyncTask<Void, Void, String> {
-
+        class InputTugas extends AsyncTask<Void, Void, String> {
 
             @Override
             protected void onPreExecute() {
@@ -97,16 +99,17 @@ public class InputAnnouncementActivity extends AppCompatActivity {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 progressDialog.dismiss();
-                Toast.makeText(InputAnnouncementActivity.this, s, Toast.LENGTH_LONG).show();
+                Toast.makeText(InputTugasActivity.this, s, Toast.LENGTH_LONG).show();
             }
 
             @Override
             protected String doInBackground(Void... v) {
                 HashMap<String, String> params = new HashMap<>();
                 params.put(KEY_TANGGAL, tanggal);
-                params.put(KEY_JAM, jam);
-                params.put(KEY_UNTUK, untuk);
-                params.put(KEY_PENGUMUMAN, pengumuman);
+                params.put(KEY_GURU, guru);
+                params.put(KEY_PELAJARAN, pelajaran);
+                params.put(KEY_KELAS, kelas);
+                params.put(KEY_TUGAS, tugas);
 
                 RequestHandler requestHandler = new RequestHandler();
                 String res = requestHandler.sendPostRequest(Input_URL, params);
@@ -114,9 +117,8 @@ public class InputAnnouncementActivity extends AppCompatActivity {
                 return res;
             }
         }
-
-        InputAnnounce inputAnnounce = new InputAnnounce();
-        inputAnnounce.execute();
+        InputTugas inputTugas = new InputTugas();
+        inputTugas.execute();
     }
 
     public class RequestHandler {
@@ -190,3 +192,4 @@ public class InputAnnouncementActivity extends AppCompatActivity {
         }
     }
 }
+
