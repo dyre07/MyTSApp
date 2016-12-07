@@ -1,7 +1,7 @@
 # MyTSApp
 
 # Penjelasan Aplikasi
-Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada aplikasi ini ada 4. 
+Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada aplikasi ini ada 4 : 
 1. Jadwal Pelajaran
    Bersisi jadwal pelajaran dari kelas 10 hingga kelas 12
 2. Kehadiran Guru
@@ -19,28 +19,30 @@ Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada apli
 
 # Video Aplikasi
 
+# Link APK
+
 # Nama Anggota
 
- Ariffani Widyaningrum
- Kelas : XIIRPL 3
- Absen :07
- NIS   :4297/1195-070
- User Github : @ariffaniw
+* Ariffani Widyaningrum
+* Kelas : XIIRPL 3
+* Absen :07
+* NIS   :4297/1195-070
+* User Github : @ariffaniw
 
- Lola Adellia
- Kelas :XIIRPL3
- Absen :17
- NIS   :4368/1266.070
- User Github : @Adellia
+* Lola Adellia
+* Kelas :XIIRPL3
+* Absen :17
+* NIS   :4368/1266.070
+* User Github : @Adellia
 
- Putra Tri Kurniawan
- Kelas :XIIRPL 3
- Absen :27
- NIS   :4412/1310.063
- User Github : @putratk
+* Putra Tri Kurniawan
+* Kelas :XIIRPL 3
+* Absen :27
+* NIS   :4412/1310.063
+* User Github : @putratk
 
- Widya Restiani
- Kelas :XIIRPL3
- Absen :37
- NIS   :4459/1357.063 
- User Github : @dyre07
+* Widya Restiani
+* Kelas :XIIRPL3
+* Absen :37
+* NIS   :4459/1357.063 
+* User Github : @dyre07
