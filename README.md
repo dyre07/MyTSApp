@@ -1,6 +1,6 @@
 # MyTSApp
-#
-# Penjelasan 
+
+# Penjelasan Aplikasi
 Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada aplikasi ini ada 4. 
 1. Jadwal Pelajaran
    Bersisi jadwal pelajaran dari kelas 10 hingga kelas 12
@@ -17,7 +17,7 @@ Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada apli
 ![s4](https://cloud.githubusercontent.com/assets/22878029/20971639/c1dda2fe-bcc4-11e6-9179-783a1f8c9ca0.png)
 ![s5](https://cloud.githubusercontent.com/assets/22878029/20971640/c202a82e-bcc4-11e6-957b-f610da507d87.png)
 
-#Video Aplikasi
+# Video Aplikasi
 
 # Nama Anggota
 
