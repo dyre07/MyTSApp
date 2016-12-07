@@ -1,15 +1,16 @@
 # MyTSApp
 
 # Penjelasan Aplikasi
-Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada aplikasi ini ada 4 : 
-1. Jadwal Pelajaran
-   Bersisi jadwal pelajaran dari kelas 10 hingga kelas 12
-2. Kehadiran Guru
-   Jika guru berhalangan hadir bisa memberi pemberitahuan disitu serta memberi tugas kepada kelas yang bersangkutan
-3. Barang Tertinggal
-   Pemberitahuan tentang barang yang tertinggal di sekolah. Disertai tanggal dan tempat dimana barang itu tertinggal
-4. Pengumuman
-   Pada fitur ini terdapat info atau pengumuman terbaru tentang kegiatan yang akan dilakukan di sekolah
+  Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada aplikasi ini ada 4 
+* Jadwal Pelajaran : 
+  Bersisi jadwal pelajaran dari kelas 10 hingga kelas 12
+* Kehadiran Guru : 
+  Jika guru berhalangan hadir bisa memberi pemberitahuan disitu serta memberi tugas kepada kelas yang bersangkutan
+* Barang Tertinggal : 
+  Pemberitahuan tentang barang yang tertinggal di sekolah. Disertai tanggal dan tempat dimana barang itu tertinggal
+* Pengumuman : 
+  Pada fitur ini terdapat info atau pengumuman terbaru tentang kegiatan yang akan dilakukan di sekolah
+  
 # ScreenShoot Aplikasi
 ![s1](https://cloud.githubusercontent.com/assets/22878029/20971636/c1ae67a0-bcc4-11e6-82db-f699a452e5d0.png)
 ![s2](https://cloud.githubusercontent.com/assets/22878029/20971638/c1b0d2c4-bcc4-11e6-80ab-eb8ce50d91c5.png)
@@ -20,27 +21,28 @@ Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada apli
 # Video Aplikasi
 
 # Link APK
+https://docs.google.com/uc?export=download&id=0B05Jn6cjc1KGd2syR3ZPaWhCMGs
 
 # Nama Anggota
-* Ariffani Widyaningrum
+#### Ariffani Widyaningrum
 * Kelas : XIIRPL 3
 * Absen :07
 * NIS   :4297/1195-070
 * User Github : @ariffaniw
-#
-* Lola Adellia
+
+#### Lola Adellia
 * Kelas :XIIRPL3
 * Absen :17
 * NIS   :4368/1266.070
 * User Github : @Adellia
-#
-* Putra Tri Kurniawan
+
+#### Putra Tri Kurniawan
 * Kelas :XIIRPL 3
 * Absen :27
 * NIS   :4412/1310.063
 * User Github : @putratk
-#
-* Widya Restiani
+
+#### Widya Restiani
 * Kelas :XIIRPL3
 * Absen :37
 * NIS   :4459/1357.063 
