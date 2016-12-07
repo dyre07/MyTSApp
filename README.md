@@ -22,25 +22,24 @@ Aplikasi ini berjudul My Telkom School Aplication. Fitur yang terdapat pada apli
 # Link APK
 
 # Nama Anggota
-
 * Ariffani Widyaningrum
 * Kelas : XIIRPL 3
 * Absen :07
 * NIS   :4297/1195-070
 * User Github : @ariffaniw
-
+#
 * Lola Adellia
 * Kelas :XIIRPL3
 * Absen :17
 * NIS   :4368/1266.070
 * User Github : @Adellia
-
+#
 * Putra Tri Kurniawan
 * Kelas :XIIRPL 3
 * Absen :27
 * NIS   :4412/1310.063
 * User Github : @putratk
-
+#
 * Widya Restiani
 * Kelas :XIIRPL3
 * Absen :37
